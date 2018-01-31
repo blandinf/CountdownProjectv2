@@ -1,5 +1,6 @@
 package jaaxaw.countdownprojectv2.activities;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -45,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (cursor.getCount() > 0) {
                         cursor.moveToNext();
                         Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                     } else
                         Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                 }
